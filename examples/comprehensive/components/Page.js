@@ -10,19 +10,24 @@ function isFunction(functionToCheck) {
 }
 
 class Page extends React.Component {
-  static navigationOptions = ({ navigation: { state: { params } } }) => ({
+  static navigationOptions = ({
+    navigation: {
+      state: { params },
+    },
+  }) => ({
     title: (params || {}).title || 'Pixi.js',
   });
 
   get data() {
-    return (this.props.navigation.state.params || {}).data || Examples;
+    return Examples;
   }
 
   onPress = item => {
     const { data } = this;
     const nextData = data[item];
-    this.props.navigation.navigate('Page', {
-      data: nextData,
+
+    this.props.navigation.navigate('ContentPage', {
+      // data: nextData,
       title: item,
     });
   };
@@ -38,5 +43,14 @@ class Page extends React.Component {
     }
   }
 }
+
+// const Page = props => {
+//   const data = () => {
+//     return (props.navigation?.state?.params || {}).data || Examples;
+//   };
+
+//   const input = Object.keys(data);
+//   return <List data={input} onPress={this.onPress} />;
+// };
 
 export default Page;

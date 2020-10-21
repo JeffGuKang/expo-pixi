@@ -6,7 +6,7 @@ import Separator from './Separator';
 
 class List extends React.Component {
   renderItem = props => <Item {...props} onPress={this.props.onPress} />;
-  keyExtractor = (item, index) => index;
+  keyExtractor = (item, index) => String(index);
   render() {
     const { style, ...props } = this.props;
     return (

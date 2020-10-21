@@ -3,7 +3,6 @@
     "name": "comprehensive",
     "description": "expo-pixi comprehensive example",
     "slug": "expo-pixi-comprehensive",
-    "sdkVersion": "32.0.0",
     "version": "1.0.0",
     "privacy": "public",
     "primaryColor": "#E44262",
@@ -12,8 +11,11 @@
       "icon": "./assets/icon.png",
       "hideExponentText": false
     },
+    "assetBundlePatterns": [
+      "./assets/**/*"
+    ],
     "packagerOpts": {
-      "assetExts": ["ttf", "mp4", "otf", "xml", "atlas", "frag", "xml"]
+      "config": "metro.config.js"
     },
     "ios": {
       "supportsTablet": true

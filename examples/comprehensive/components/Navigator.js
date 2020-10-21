@@ -1,9 +1,21 @@
-import { StackNavigator } from 'react-navigation';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import screen from './Page';
+import Page from './Page';
+import ContentPage from './ContentPage';
 
-export default StackNavigator({
-  Page: {
-    screen,
-  },
-});
+const Stack = createStackNavigator();
+
+function Navigator() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Page" component={Page} />
+        <Stack.Screen name="ContentPage" component={ContentPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default Navigator;
